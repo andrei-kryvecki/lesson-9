@@ -1,0 +1,251 @@
+header {
+    width: 100%;
+
+    .mobile-header {
+        width: 100%;
+        background: linear-gradient(#EE7055,#FD5272);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+        display: none;
+            
+        a {
+            font-family: 'Deftone Stylus', arial;
+            font-weight: 900;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: auto;
+            padding: 0 0 0 40px;
+        }
+
+        .zoom-in {
+            width: 20px;
+            height: 20px;
+            background: url(../../img/header-zoom-in-2.png) center center no-repeat;
+            background-size: contain;
+        }
+
+        .profile-photo {
+            width: 30px;
+            height: 30px;
+            background: url(../../img/header-avatar-jenner.png) center center no-repeat;
+            background-size: contain;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            margin-left: 10px;
+        }
+
+        .burger{
+            width: 20px;
+            height: 2px;
+            background-color: #ffffff;
+            position: relative;
+            margin-right: auto;
+            cursor: pointer;
+        }
+
+        .burger::before{
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: #ffffff;
+            position: absolute;
+            top: -6px;
+        }
+
+        .burger::after{
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: #ffffff;
+            position: absolute;
+            top: 6px;
+        }
+    }
+
+    .profile-menu {
+        display: flex;
+        border-bottom: 1px solid #F1F1F1;
+        flex-wrap: wrap;
+
+            button {
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #ff9dc32c;
+                transition: 0.4s;
+            }
+
+            button:active {
+                background-color: #ff9dc354;
+            }
+            
+            .icon {
+                width: 60px;
+                height: 70px;
+                border-right: 1px solid #F1F1F1;
+            }
+
+            .icon--rounder {
+                background: url(../../img/header-rounder.png) center center no-repeat;
+                width: 70px;
+            }
+        
+            .icon--folder {
+                background: url(../../img/header-folder.png) center center no-repeat;
+            }
+            
+        
+            .icon--settings {
+                background: url(../../img/header-settings.png) center center no-repeat;
+                margin-right: auto;
+            }
+        
+            .icon--upload {
+                background: url(../../img/header-upload.png) center center no-repeat;
+                border-left: 1px solid #F1F1F1;
+                margin-left: auto;
+            }
+        
+            .icon--envelope {
+                background: url(../../img/header-envelope.png) center center no-repeat;
+            }
+
+            .icon--planet-earth {
+                background: url(../../img/header-planet-earth.png) center center no-repeat;
+                border: none;
+                position: relative;
+            }
+
+
+            .profile-menu__input {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 18px 0;
+                position: relative;
+                .input {
+                    width: 300px;
+                    height: 34px;
+                    border-radius: 30px;
+                    border: 1px solid #F1F1F1; 
+                    padding: 0 30px 0 10px;
+                    color: #363636;
+                    outline: none;
+                    background-color: #F8F8F8;
+                }
+
+                .input__icon {
+                    background: url(../../img/header-input-zoom-in.png) center center no-repeat;
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top: 10px;
+                    right: 0;
+                }
+
+                .input::placeholder {
+                    color:#C8C8C8;
+                }
+            }
+
+            .profiler-menu__profile {
+                max-width: 244px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+
+                .profile-menu__info{ 
+                    width: 174px;
+                    padding: 0 18px;
+                    display: flex;
+                    justify-content: space-between;
+        
+                    .profile-menu__avatar {
+                        margin-right: auto;
+                    }
+
+                    h4 {
+                        font-size: $fzname;
+                        background: linear-gradient(#EE7055,#FD5272); 
+                        -webkit-background-clip: text;  
+                        color: transparent;
+                    }
+
+                    h5 { 
+                        font-size: $fzstatus;
+                        color:#BFBFBF
+                    }
+                }
+
+                .ellipse {
+                    background: url(../../img/header-ellipses.png) center center no-repeat;
+                    width: 6px;
+                    height: 25px;
+                }   
+        }
+    }
+
+    .daily-stat {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 0 20px 40px;
+        box-shadow: -3px 15px 27px -28px #000000;
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            overflow: scroll;
+
+            .daily-stat__item {
+                flex-shrink: 0;
+                margin-left: 30px;
+            }
+
+            .daily-stat__item:nth-child(1){
+                margin: 0;
+            }
+        }
+
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        h3 {
+            @include title--daily;
+        }
+
+        p {
+            @include quantity--daily;
+        }
+
+        span {
+            @include change--daily;
+            padding-left: 10px;
+        }
+
+        button {
+            width: 225px;
+            border: none;
+            outline: none;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(#EE7055,#FD5272); 
+            -webkit-background-clip: text;  
+            color: transparent;
+            cursor: pointer;  
+            position: relative;
+            box-shadow: -7px 0px 10px -11px #000000;
+        }
+
+        button:hover {
+            font-size: 14px;
+        }
+    }
+}

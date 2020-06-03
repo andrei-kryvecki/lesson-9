@@ -1,0 +1,352 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 268px;
+    box-shadow: 0 4px 10px #00000033;
+
+    .chat {
+        height: 516px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .chat::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container--aside-buttons {
+        background: linear-gradient(to left, #EE7055,#FD5272);
+    }
+
+    .container--aside-buttons {
+        .chat__btn {
+            width: 33.33%;
+            height: 47px;
+            border: none;
+            background-color: #00000000;
+            cursor: pointer; 
+            outline: none;
+        }
+
+        .chat__btn--users {
+            position: relative;
+        }
+
+        .chat__btn--users::before {
+            content: '';
+            width: 24px;
+            height: 20px;
+            background: url(../../img/aside-chat-btn-users.png) center center no-repeat;
+            top: 12px;
+            left: 33px;
+            position: absolute;
+            opacity: 1;
+        }
+
+        .chat__btn--users:hover {
+            background-color: #ffffff1a;
+        }
+
+        .chat__btn--users:active {
+            background-color: #0000001a;
+        }
+
+        .chat__btn--messages {
+            position: relative;
+        }
+
+        .chat__btn--messages::before {
+            content: '';
+            width: 24px;
+            height: 20px;
+            background: url(../../img/aside-chat-btn-messages.png) center center no-repeat;
+            top: 12px;
+            left: 33px;
+            position: absolute;
+            opacity: 1;
+        }
+
+        .chat__btn--messages:hover {
+            background-color: #ffffff1a;
+        }
+
+        .chat__btn--messages:active {
+            background-color: #0000001a;
+        }
+
+        .chat__btn--likes {
+            position: relative;
+        }
+
+        .chat__btn--likes::before {
+            content: '';
+            width: 24px;
+            height: 20px;
+            background: url(../../img/aside-chat-btn-likes.png) center center no-repeat;
+            top: 12px;
+            left: 33px;
+            position: absolute;
+            opacity: 1;
+        }
+
+        .chat__btn--likes:hover {
+            background-color: #ffffff1a;
+        }
+
+        .chat__btn--likes:active {
+            background-color: #0000001a;
+        }
+    }
+
+    .chat__users {
+
+        margin-top: 4px;
+
+        .profile-menu__name {
+            padding: 4px 0;
+        }
+
+        h4 {
+            font-size: $fzname;
+            color: #777777;
+        }
+
+        h5 { 
+            font-size: $fzstatus;
+            color: #BFBFBF;
+            padding-top: 5px;
+        }
+
+        .profile-menu__info {
+            display: flex;
+        }
+
+        img {
+            padding-right: 17px;
+        }
+
+        ul {
+            padding: 0 18px;
+        }
+       
+        li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #F1F1F1;
+            padding: 20px 0;
+        }
+        
+        li:nth-last-child(1) {
+            border: none; 
+        }
+
+        .chat__btn--messages {
+            width: 24px;
+            height: 20px;
+            background: url(../../img/aside-chat-btn-message.png) center center no-repeat;
+            border: none;
+            outline: none;
+            margin-top: 12px;
+            position: relative;
+            cursor: pointer;
+    
+        }
+
+        .chat__btn--messages:hover {
+            width: 25px;
+            height: 20px;
+            background-size: cover;
+        }
+
+        .chat__btn--messages:active {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+        }
+
+
+    }
+
+    .aside-input {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px 10px 20px;
+            border-top: 1px solid #F1F1F1;
+            border-bottom: 1px solid #F1F1F1;
+
+        input {
+            width: 165px;
+            border: none;
+            border-bottom: 1px solid #F1F1F1;
+            outline: none;
+            font-size: 10px;
+            color: #C0C0C0;
+            padding: 0 0 8px 0;
+            background-color:  #00000000;
+            color:#363636;
+        }
+
+        .input::placeholder {
+            color:#C8C8C8;
+        }
+
+        .btn--zoom-in {
+            width: 20px;
+            height: 20px;
+            background: url(../../img/header-input-zoom-in.png) center center no-repeat;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn--zoom-in:hover {
+            background-size: cover;
+        }
+
+        .btn--zoom-in:active {
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+        }
+
+        .btn--pencil {
+            width: 20px;
+            height: 20px;
+            background: url(../../img/acide-btn-pencil.png) center center no-repeat;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn--pencil:hover {
+            background-size: cover;
+        }
+
+        .btn--pencil:active {
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+        }
+    }
+
+    .featured-companys {
+        width: 268px;
+        text-align: center;
+
+        .featured-companys__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 30px 10px 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #777777;
+            margin: 25px auto 29px auto;
+        }
+
+        button {
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+            border: none;
+            outline: none;
+            margin: 0 7px 15px 7px;
+        }
+
+        .btn--rdio { 
+            background:linear-gradient(-45deg, rgba(106,91,181,1) 0%, rgba(188,129,228,1) 100%);
+            position: relative;
+        }
+
+        .btn--rdio::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-rdio-logo.png) center center no-repeat;
+            position: absolute;
+            top: 13px;
+            right: 11px;
+        }
+
+        .btn--css { 
+            background: linear-gradient(135deg, #57e6c7 0%, rgba(77,189,196,1) 100%);
+            position: relative;
+        }
+
+        .btn--css::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-css-3-logo.png) center center no-repeat;
+            position: absolute;
+            top: 13px;
+            right: 11px;
+        }
+
+        .btn--deviantart { 
+            background: linear-gradient(135deg, rgba(243,183,153,1) 0%, rgba(179,112,122,1) 100%);
+            position: relative;
+        }
+
+        .btn--deviantart::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-deviantart-logo.png) center center no-repeat;
+            position: absolute;
+            top: 13px;
+            right: 12px;
+        }
+
+        .btn--xing { 
+            background: linear-gradient(135deg, rgba(143,161,232,1) 0%, rgba(151,95,186,1) 100%);
+            position: relative;
+        }
+
+        .btn--xing::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-xing-logopng.png) center center no-repeat;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+
+        .btn--vimeo { 
+            background: linear-gradient(135deg, rgba(75,210,226,1) 0%, rgba(88,142,231,1) 100%);
+            position: relative;
+        }
+
+        .btn--vimeo::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-vimeo-logo.png) center center no-repeat;
+            position: absolute;
+            top: 13px;
+            right: 13px;
+        }
+
+        .btn--vk { 
+            background: linear-gradient(135deg, rgba(251,214,138,1) 0%, rgba(246,159,145,1) 100%);
+            position: relative;
+        }
+
+        .btn--vk::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: url(../../img/aside-vk-logo.png) center center no-repeat;
+            position: absolute;
+            top: 13px;
+            right: 14px;
+        }
+    }
+}
+
