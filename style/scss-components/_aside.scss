@@ -5,7 +5,7 @@ aside {
     box-shadow: 0 4px 10px #00000033;
 
     .chat {
-        height: 516px;
+        height: 100%;
         overflow-x: hidden;
         overflow-y: scroll;
     }
@@ -99,6 +99,7 @@ aside {
     }
 
     .chat__users {
+        height: 516px;
 
         margin-top: 4px;
 
@@ -123,6 +124,7 @@ aside {
 
         img {
             padding-right: 17px;
+            cursor: pointer;
         }
 
         ul {
@@ -231,9 +233,15 @@ aside {
         }
     }
 
+    .aside-input:hover {
+        background-color: #4169e109;
+        
+    }
+
     .featured-companys {
         width: 268px;
         text-align: center;
+        margin-top: auto;
 
         .featured-companys__buttons {
             display: flex;
@@ -256,11 +264,17 @@ aside {
             border: none;
             outline: none;
             margin: 0 7px 15px 7px;
+            cursor: pointer;
         }
 
         .btn--rdio { 
             background:linear-gradient(-45deg, rgba(106,91,181,1) 0%, rgba(188,129,228,1) 100%);
             position: relative;
+        }
+
+        .btn--rdio:hover {
+            box-shadow: 0 0 7px #AB69DD;
+            transition: 0.2s;
         }
 
         .btn--rdio::after {
@@ -278,6 +292,11 @@ aside {
             position: relative;
         }
 
+        .btn--css:hover {
+            box-shadow: 0 0 7px #51E4C5;
+            transition: 0.2s;
+        }
+
         .btn--css::after {
             content: '';
             width: 30px;
@@ -291,6 +310,11 @@ aside {
         .btn--deviantart { 
             background: linear-gradient(135deg, rgba(243,183,153,1) 0%, rgba(179,112,122,1) 100%);
             position: relative;
+        }
+
+        .btn--deviantart:hover {
+            box-shadow: 0 0 7px #F1B195;
+            transition: 0.2s;
         }
 
         .btn--deviantart::after {
@@ -308,6 +332,11 @@ aside {
             position: relative;
         }
 
+        .btn--xing:hover {
+            box-shadow: 0 0 7px #7284E1;
+            transition: 0.2s;
+        }
+
         .btn--xing::after {
             content: '';
             width: 30px;
@@ -321,6 +350,11 @@ aside {
         .btn--vimeo { 
             background: linear-gradient(135deg, rgba(75,210,226,1) 0%, rgba(88,142,231,1) 100%);
             position: relative;
+        }
+
+        .btn--vimeo:hover {
+            box-shadow: 0 0 7px #36CCDF;
+            transition: 0.2s;
         }
 
         .btn--vimeo::after {
@@ -338,6 +372,11 @@ aside {
             position: relative;
         }
 
+        .btn--vk:hover {
+            box-shadow: 0 0 7px #FBD589;
+            transition: 0.2s;
+        }
+
         .btn--vk::after {
             content: '';
             width: 30px;
@@ -348,5 +387,6 @@ aside {
             right: 14px;
         }
     }
+
 }
 

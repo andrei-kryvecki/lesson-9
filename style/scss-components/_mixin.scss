@@ -1,0 +1,27 @@
+@mixin title--daily {
+    font-weight: bold;
+    font-size: 12px; 
+    color: #777777;
+}
+
+@mixin quantity--daily {
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(to left, #EE7055,#FD5272); 
+    background-clip: text;  
+    color: transparent;
+}
+
+@mixin change--daily {
+    font-weight: bold;
+    font-size: 12px;
+    color: #BFBFBF;
+}
+
+@mixin flexiblePlacement ($axis-x, $axis-y, $axis-inversion, $wrap) {
+    display: flex;
+    justify-content: $axis-x;
+    align-items: $axis-y;
+    flex-direction: $axis-inversion;
+    flex-wrap: $wrap;
+}

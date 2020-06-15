@@ -75,15 +75,29 @@ header {
                 border: none;
                 outline: none;
                 cursor: pointer;
+                z-index: 1;
+                overflow: hidden;
+                background-color: #ffffff;
+                position: relative;
             }
 
-            button:hover {
-                background-color: #ff9dc32c;
-                transition: 0.4s;
+            button:hover::before,
+            button:focus::before {
+                transform: scale(1.5);
             }
 
-            button:active {
-                background-color: #ff9dc354;
+            button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #ff797917;
+                z-index: -1;
+                border-radius: 35px;
+                transition: transform 0.3s ease-in-out;
+                transform: scale(0);
             }
             
             .icon {
@@ -92,9 +106,14 @@ header {
                 border-right: 1px solid #F1F1F1;
             }
 
-            .icon--rounder {
+            .icon--rounder::after {
+                content: '';
                 background: url(../../img/header-rounder.png) center center no-repeat;
-                width: 70px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
         
             .icon--folder {
@@ -123,6 +142,16 @@ header {
                 position: relative;
             }
 
+            .icon--planet-earth::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #FD5E6A;
+                position: absolute;
+                top: 20px;
+                left: 38px;
+            }
 
             .profile-menu__input {
                 display: flex;
@@ -138,6 +167,11 @@ header {
                     color: #363636;
                     outline: none;
                     background-color: #F8F8F8;
+                }
+
+                .input:focus {
+                    border: 2px solid #d6d6d6a2;
+                    transition: 0.5s;
                 }
 
                 .input__icon {
@@ -195,7 +229,7 @@ header {
         display: flex;
         justify-content: space-between;
         padding: 18px 0 20px 40px;
-        box-shadow: -3px 15px 27px -28px #000000;
+        box-shadow: -3px 15px 27px -28px #00000075;
 
         .container {
             width: 100%;
@@ -223,11 +257,39 @@ header {
 
         p {
             @include quantity--daily;
+            background: linear-gradient(#EE7055,#FD5272); 
+            -webkit-background-clip: text;  
+            color: transparent;
         }
 
         span {
             @include change--daily;
             padding-left: 10px;
+            position: relative;
+        }
+
+        span:nth-last-child(1)::before {
+            content: '';
+            width: 0; 
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 6px solid #FD5670;
+            position: absolute;
+            top: 5px;
+            left: 1px;
+        }
+
+        span:nth-last-child(2)::before {
+            content: '';
+            width: 0; 
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-bottom: 6px solid #A889E9;
+            position: absolute;
+            top: 5px;
+            left: 1px;
         }
 
         button {
@@ -241,7 +303,6 @@ header {
             color: transparent;
             cursor: pointer;  
             position: relative;
-            box-shadow: -7px 0px 10px -11px #000000;
         }
 
         button:hover {

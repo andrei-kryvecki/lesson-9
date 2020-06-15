@@ -1,9 +1,11 @@
 .navigation {
+    
     width: 70px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(#EE7055,#FD5272);
     box-shadow: 0 0 10px #00000033;
+    z-index: 3;
 
     a {
         font-family: 'Lato', sans-serif;
@@ -28,7 +30,6 @@
             background: linear-gradient(#EE7055,#FD5272); 
             -webkit-background-clip: text;  
             color: transparent;
-            padding: 0 20px 0 10px;
         }
     }
 
@@ -37,53 +38,62 @@
         display: flex;
         flex-direction: column;
         font-size: 10px;
+        margin-top: 10px;
 
         .main-nav__item {
             width: 100%;
-            height: 60px;
-            margin: 5px auto;
+            height: 70px;
             list-style-type: none;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             cursor: pointer;
+            padding-bottom: 15px;
+            position: relative;
         }
 
         .main-nav__item:hover {
             background-color: #ffffff56;
         }
 
-        .main-nav__item:nth-child(1){
-            position: relative;
-        }
-
-        .main-nav__item:nth-child(1)::before {
+        .main-nav__item::before {
             content: '';
             width: 0;
             height: 0;
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
-            border-left: 7px solid #EE7055;
+            border-left: 7px solid #ee7155a2;
             margin: 50px;
             position: absolute;
             left: 20px;
-            top: -20px;
+            top: -22px;
+            display: none;
         }
+
+        .main-nav__item:hover:before {
+            display: flex;
+        }   
+
       
         .main-nav__item--home {
-            background: url(../../img/nav-home.png) center center no-repeat;
+            background: url(../../img/nav-home.png) center 35% no-repeat;
+            position: relative;
         }
+
         .main-nav__item--stactics {
-            background: url(../../img/nav-bar-chart.png) center center no-repeat;
+            background: url(../../img/nav-bar-chart.png) center 35% no-repeat;
         }
+
         .main-nav__item--users {
-            background: url(../../img/nav-user.png) center center no-repeat;
+            background: url(../../img/nav-user.png) center 35% no-repeat;
         }
+
         .main-nav__item--settings {
-            background: url(../../img/nav-settings.png) center center no-repeat;
+            background: url(../../img/nav-settings.png) center 35% no-repeat;
         }
+
         .main-nav__item--quires {
-            background: url(../../img/nav-information.png) center center no-repeat;
+            background: url(../../img/nav-information.png) center 35% no-repeat;
         }
     }
 

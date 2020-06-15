@@ -1,0 +1,668 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    flex: 1 1 100%;
+
+    .container--revenue-graphic-revenue-per-hour {
+        display: flex; 
+        flex: 1 1 100%;
+
+        .revenue-graphic {
+            width: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 0 10px #00000033;
+            margin: 10px;
+
+            li {
+                @include change--daily;
+            }
+
+            .container__title {
+                display: flex;
+
+                h2 {
+                    margin-bottom: auto;
+                }
+
+                .revenue-graphic__buttons {
+                    display: flex;
+                    margin-left: auto;
+
+                    .revenue-graphic__buttons--rounder {
+                        background: url(../../img/header-ellipses.png) center center no-repeat;
+                        width: 10px;
+                        height: 25px;
+                    }
+                    
+                    button {
+                        @include change--daily;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        background: none;
+                        width: 40px;
+                        height: 20px;
+                        border-radius: 30px;
+                    }
+
+                    button:hover {
+                        background-color: #ffffff1f;
+                    }
+                    button:active {
+                        background: linear-gradient(to left, #EE7055,#FD5272);
+                        color: #ffffff;
+                    }
+
+                    button:nth-last-child(1):active {
+                        background-color:none;
+                    }
+                }
+            }
+
+            .container {
+                display: flex;
+                width: 100%;
+                margin-top: 36px;
+
+                .revenue-graphic__revenue-list {
+                    margin-right: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .revenue-graphic__graphic {
+                    width: 100%;
+                    min-height: 117px;
+                    border-top: 1px solid #F1F1F1;
+                    border-bottom: 1px solid #F1F1F1;
+                    position: relative;
+                    background: url(../../img/main-revenue-graphic.png) right bottom no-repeat;
+                    overflow: scroll;
+                }
+
+                .revenue-graphic__graphic::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .revenue-graphic__graphic::after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: #F1F1F1;
+                    position: absolute;
+                    left: 0;
+                    top: 39px;
+                    z-index: -1;
+                }
+
+                .revenue-graphic__graphic::before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: #F1F1F1;
+                    position: absolute;
+                    left: 0;
+                    top: 78px;
+                    z-index: -1;
+                }
+
+            }
+
+            .revenue-graphic__month-list {
+
+                margin-top: auto;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                padding-left: 62px; 
+                overflow: scroll; 
+            }
+
+            .revenue-graphic__month-list::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .revenue--per-hour {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            flex-shrink: 0;
+            width: 263px;
+            height: 265px;
+            margin-left: auto;
+            box-shadow: 0 0 10px #00000033;
+            margin: 10px;
+
+            span {
+                @include change--daily;
+                padding-left: 10px;
+                position: relative;
+            }
+
+    
+            .container span:nth-last-child(1)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 6px solid #FD5670;
+                position: absolute;
+                top: 5px;
+                left: 1px;
+            }
+    
+            .container span:nth-last-child(2)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-bottom: 6px solid #A889E9;
+                position: absolute;
+                top: 5px;
+                left: 1px;
+            }
+
+            .revenue--per-hour__circle{
+                width: 124px;
+                height: 124px;
+                position: relative;
+                padding: 2px;
+
+                .revenue--per-hour__circle--purple {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(-45deg, rgba(106,91,181,1) 0%, rgba(188,129,228,1) 100%);
+                    border-radius: 50%;
+                    overflow: hidden;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+                    .revenue--per-hour__circle--segment {
+                        width: 0; 
+                        height: 0;
+                        border-left: 25px solid transparent;
+                        border-right: 25px solid transparent;
+                        border-bottom: 52px solid #E9E9E9;
+                        transform: rotate(315deg);
+                        position: absolute;
+                        top: 60px;
+                        left: 64px;
+                        
+                    }
+
+                    .revenue--per-hour__circle--segment::before {
+                        content: '';
+                        width: 11px; 
+                        height: 11px;
+                        background: #7263bd;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: 33px;
+                        left: 12px;
+                        z-index: 3;
+                        transform: rotate(155deg);
+                    }
+
+                    .revenue--per-hour__circle--segment::after {
+                        content: '';
+                        width: 11px; 
+                        height: 11px;
+                        background: #7263bd;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: 34px;
+                        left: -24px;
+                        z-index: 3;
+                        transform: rotate(155deg);
+                    }
+
+                    .revenue--per-hour__circle--white {
+                        width: 100px;
+                        height: 100px;
+                        background-color: #ffffff;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+
+                        .revenue--per-hour__value {
+                            width: 85px;
+                            height: 85px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 10px #00000033;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 5px;
+                            
+                            span { 
+                                font-weight: 700;
+                                font-size: 25px;
+                                background: linear-gradient(to left,  #6a5bb5, #bc81e4); 
+                                -webkit-background-clip: text;  
+                                color: transparent;
+                            }
+                        }
+                    }
+
+                    
+                }
+            }
+
+        }
+    }
+
+    .feed {
+        width: 100%;
+        min-height: 508px;
+        padding: 30px 30px 35px 30px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px #00000033;
+        margin: 10px;
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 39px;
+
+            a{
+                text-decoration: none;
+                position: relative;
+            }
+
+            .link--turner::after {
+                content: '10 Min Ago';
+                position: absolute;
+                font-size: 8px;
+                color:#979796;
+                top: 45px;
+                left: 1px;
+            }
+
+            .link--quill::after {
+                content: '15 Min Ago';
+                position: absolute;
+                font-size: 8px;
+                color:#979796;
+                top: 45px;
+                left: 1px;
+            }
+
+            span {
+                font-weight: 900;
+                color: #777777; 
+            }
+
+            p {
+                padding: 18px;  
+                background-color: #FCFCFC;  
+                border: 1px solid #F1F1F1; 
+                font-size: 12px;
+                font-weight: lighter;   
+                color: #BFBFBF;           
+            }
+
+            .feed__message {
+                display: flex;
+
+                a {
+                    margin-right: 20px;
+                }
+
+            }
+
+            .feed__message--additional {
+                justify-content: space-between;
+                max-width: 330px;
+                padding-left: 14px;
+                border-left: 2px solid #F1F1F1;
+                margin: 19px 0 19px auto;
+            
+            p:nth-child(1) {
+                margin-bottom: 19px;
+            }   
+        }
+    }
+
+}
+
+    .task {
+        height: 100%;
+        padding: 30px 30px 60px 30px;
+        box-shadow: 0 0 10px #00000033;
+        margin: 10px;
+
+        .container {
+    
+            height: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+            margin-top: 20px;
+
+            ul {
+                height: 100px;
+            }
+
+            li:nth-child(2n) {
+                background-color: #FCFCFC;
+            }
+
+            li:nth-last-child(1) {
+                border-bottom: 1px solid #F1F1F1;
+            }
+
+            li {
+                display: flex;
+                padding: 10px 5px 10px 7px;
+                border-top: 1px solid #F1F1F1;
+
+                input {
+                    cursor: pointer;
+                    align-self: center;
+                }
+
+                h3 {
+                    font-size: 12px;
+                    color: #FD566F;
+                    margin: auto 12px;
+                }
+
+                span {
+                    font-size: 12px;
+                    color: #BFBFBF;
+                }
+
+                .discription {
+                    margin-left: auto;
+                }
+
+                .time {
+                    font-weight: bold;
+                    color: #9C9C9C;
+                    margin-left: 55px;
+                    position: relative;
+                }
+
+                .time::before {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    background: url(../../img/task-clock.png);
+                    position: absolute;
+                    left: -20px;
+                    top: 1px;
+                }
+            }
+
+            li:hover {
+                background-color: #f4f2ff;
+            }
+            li:active {
+                background-color: #efecff;
+            }
+        }
+
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .progress {
+        width: 241px;
+        height: 241px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 0 10px #00000033;
+        margin: 10px;
+
+        .graphic {
+            display: flex;
+            margin: 26px auto 18px auto;
+
+            div {
+                width: 11px;
+                height: 88px;
+                border-radius: 30px;
+                border: 1px solid #F1F1F1;
+                background-color: #F6F6F6;
+                margin: auto 4px;
+                position: relative;
+            }
+
+            :nth-child(1)::before {
+                content: '';
+                width: 11px;
+                height: 48px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 113px;
+                z-index: 2;
+            }
+
+            :nth-child(1)::after {
+                content: '';
+                width: 11px;
+                height: 41px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 37px;
+                z-index: 2;
+            }
+
+            :nth-child(2)::before {
+                content: '';
+                width: 11px;
+                height: 48px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: -20px;
+            }
+
+            :nth-child(2)::after {
+                content: '';
+                width: 11px;
+                height: 48px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 37px;
+                z-index: 2;
+            }
+
+            :nth-child(3)::before {
+                content: '';
+                width: 11px;
+                height: 61px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 94px;
+                z-index: 2;
+            }
+
+            :nth-child(3)::after {
+                content: '';
+                width: 11px;
+                height: 61px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 37px;
+                z-index: 2;
+            }
+
+            :nth-child(4)::before {
+                content: '';
+                width: 11px;
+                height: 41px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: 37px;
+                z-index: 2;
+            }
+
+            :nth-child(4)::after {
+                content: '';
+                width: 11px;
+                height: 61px;
+                border-radius: 30px;
+                background: linear-gradient( #7089E5,#8743B1);
+                position: absolute;
+                bottom: -1px;
+                left: -39px;
+                z-index: 2;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(to right, #7089E5,#8743B1); 
+            -webkit-background-clip: text;  
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+
+            span {
+                @include change--daily;
+                padding-left: 10px;
+                position: relative;
+            }
+
+            span:nth-last-child(1)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 6px solid #FD5670;
+                position: absolute;
+                top: 5px;
+                left: 2px;
+            }
+    
+            span:nth-last-child(2)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-bottom: 6px solid #A889E9;
+                position: absolute;
+                top: 5px;
+                left: 2px;
+            }
+        }
+    }
+
+    .shipments {
+        width: 241px;
+        height: 241px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 24px 24px 24px;
+        box-shadow: 0 0 10px #00000033;
+        margin: 10px;
+
+        .map {
+            width: 100%;
+            height: 100%;
+            background: url(../../img/shipments-map-usa.png) center center no-repeat;
+            position: relative;
+        }
+        .map::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url(../../img/shipments-placeholder.png) center center no-repeat;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            }
+
+        .container {
+            display: flex;
+            width: 100%;
+
+            :nth-child(2){
+                margin-left: auto;
+            }
+
+            span {
+                @include change--daily;
+                padding-left: 10px;
+                align-self: flex-end;
+                position: relative;
+            }
+
+            span:nth-last-child(1)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-top: 6px solid #FD5670;
+                position: absolute;
+                top: 5px;
+                left: 2px;
+            }
+    
+            span:nth-last-child(2)::before {
+                content: '';
+                width: 0; 
+                height: 0;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                border-bottom: 6px solid #A889E9;
+                position: absolute;
+                top: 5px;
+                left: 2px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: bold;
+                background: linear-gradient(to right, #EE7055,#FD5272); 
+                -webkit-background-clip: text;  
+                color: transparent; 
+            }
+        }
+    }
+}
