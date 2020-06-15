@@ -1,30 +1,12 @@
-$fzname: 13px;
-$fzstatus: 10px; 
 
-@mixin title--daily {
-    font-weight: bold;
-    font-size: 12px; 
-    color: #777777;
-}
-
-@mixin quantity--daily {
-    font-weight: 900;
-    font-size: 20px;
-    background: linear-gradient(to left, #EE7055,#FD5272); 
-    -webkit-background-clip: text;  
-    color: transparent;
-}
-
-@mixin change--daily {
-    font-weight: bold;
-    font-size: 12px;
-    color: #BFBFBF;
-}
+@import "./mixin";
+@import "./variables";
 
 @import './nav';
 @import './header';
 @import './aside';
 @import './main';
+
 
 * {
     box-sizing: border-box;
@@ -65,30 +47,23 @@ body {
     display: flex;
 }
 
-.container--task-progress-shipments {
-    display: flex;
-    flex-direction: column;
-}
-
 .container--progress-shipments {
     display: flex;
 }
 
 .container--revenue-graphic-revenue-per-hour {
-    width: 100%;
     display: flex;
+    flex: 1 1 100%;
 }
 
 .container--feed-task-progress-shipments {
     display: flex;
-    margin-top: auto;
 }
 
 .container--task-progress-shipments {
     display: flex;
     flex-direction: column;
-    width: 50.5%;
-    margin-left: auto;
+    flex: 1 1 100%;
 }
 
 .container--progress-shipments {
@@ -111,209 +86,12 @@ h2 {
     color: #767676;
 }
 
+@import './media';
 
 
 
-@media screen and (max-width: 1000px) {
-
-    header {
-
-        .profile-menu__input {
-            order: 2;
-            width: 45%;
-            margin-left: 18px;
-
-            .input {
-                min-width: 100%;
-            }
-        }
-
-        .profiler-menu__profile {
-            order: 3;
-            margin-left: auto;
-        }
-
-        .profile-menu .icon {
-            width: 16.66%;
-            margin: 0;
-            padding: 0;
-            border-bottom: 1px solid #F1F1F1;
-        }
-        
-        .profile-menu .icon--upload {
-            border-left: none;
-        }
-
-        .daily-stat {
-            padding: 10px 0 10px 10px;
-
-            button {
-                width: 140px;
-            }
-        }
-
-    }
-
-    main {
-        padding: 15px;
-    }
-
-    .container--main-aside {
-        display: flex;
-        flex-direction: column;
-    }
-
-    aside {
-        width: 85%;
-        margin: 10px auto;
-
-        .chat {
-
-            height: 320px;
-
-        }
-
-        .btn--zoom-in {
-            margin-right: auto;
-        }
 
 
-        .featured-companys {
-            width: 100%;
-
-            .featured-companys__buttons {
-                padding: 0;
-                
-                button {
-                    margin: 5px;
-                }
-            }
-        }
-    }
-
-}
-
-@media screen and (max-width: 1180px) {
-    main {
-
-        .container--feed-task-progress-shipments {
-            flex-wrap: wrap;
-
-            .feed {
-                min-width: 85%;
-                margin: 10px auto;
-            }
-
-            .container--task-progress-shipments {
-                min-width: 85%;
-                margin: 10px auto;
-
-                .progress, .shipments {
-
-                    padding: 10px;
-                }
-            }
-
-        }
-    }
-
-}
-
-
-@media screen and (max-width: 640px) {
-
-    .navigation {
-        display: none;
-    }
-
-    header {
-
-        .mobile-header {
-            display: flex;
-            background: linear-gradient(#EE7055,#FD5272);
-
-            a {
-                margin-left: auto;
-            }
-    
-            .zoom-in {
-                display: block;
-                margin-left: auto;
-            }
-            .profile-photo {
-                display: block;
-            }
-        }
-    }
-    
-    
-    header .profile-menu {
-
-        .profile-menu__input {
-            display: none;
-        }
-
-        .profiler-menu__profile {
-            display: none;
-        }
-    }
-    
-    .container--revenue-graphic-revenue-per-hour {
-        flex-wrap: wrap;
-    }
-        
-    .revenue-graphic {
-            min-width: 100%;
-
-            .revenue-graphic__month-list {
-                padding-right: 30px;
-                margin: auto 10px;
-            }
-
-    }
-
-    .revenue--per-hour {
-        margin: 15px auto 5px auto;
- 
-    }
-
-    main {
-        .revenue-graphic {
-            
-            .revenue-graphic__buttons {
-                display: none;
-            }
-        }
-
-
-        .task {
-            width: 78vw;
-            height: 50vh;
-            padding: 30px 0 0 0;
-            overflow: hidden;
-        }
-    }
-
-    
-
-    .container--progress-shipments {
-        flex-wrap: wrap;
-
-        .progress {
-            width: 80vw;
-            height: 80vw;
-            margin-top: 15px;
-        }
-
-        .shipments {
-            width: 80vw;
-            height: 80vw;
-            margin-top: 15px;
-        }
-    }
-
-
-}
 
 
 
